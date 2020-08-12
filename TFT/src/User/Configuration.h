@@ -44,8 +44,8 @@
  *              6: LCD_DIM_300_SECONDS,  7: LCD_DIM_CUSTOM_SECONDS
  *
  */
-#define DEFAULT_LCD_BRIGHTNESS      10  // 10: LCD_100_PERCENT - Brightness value from list
-#define DEFAULT_LCD_IDLE_BRIGHTNESS 2   // 2: LCD_10_PERCENT - Brightness value from list
+#define DEFAULT_LCD_BRIGHTNESS      11  // 11: LCD_100_PERCENT - Brightness value from list
+#define DEFAULT_LCD_IDLE_BRIGHTNESS 3   // 3: LCD_10_PERCENT - Brightness value from list
 #define DEFAULT_LCD_IDLE_TIMER      0   // 0: LCD_DIM_OFF
 #define LCD_DIM_CUSTOM_SECONDS      600 // Custom value in seconds. Will be used if LCD_DIM_CUSTOM_SECONDS is set as idle timer.
 
@@ -218,25 +218,36 @@
 #define AUTO_SAVE_LOAD_LEVELING_VALUE true //to enabled: true | to disabled: false
 
 /**
- * Enable Unified Bed Leveling options.
+ * Enable Unified Bed Leveling options
  *  Will attempt to auto detect and enable specific UBL options.
- * 
+ *
  * WARNING - If you're not sure, leave on auto-detect or disabled.
  *           UBL has extra options other leveling systems might not have.
- * 
+ *
  * Options:  0: Disabled    1: Enabled    2: Auto-detect [default]
- * 
+ *
  */
 #define ENABLE_UBL_VALUE 2
 
 /**
- * Enable friendly probe offset language.
+ * Enable friendly probe offset language
  * 
  * Decrease/increase and "-" & "+" icons are replaced with down/up and friendly icons
- * 
+ *
  * Options:  0: Disabled    1: Enabled
  */
 #define FRIENDLY_PROBE_OFFSET_LANGUAGE 1
+
+/**
+ * Enable quick EEPROM save/load/reset button
+ * 
+ * This will enable a handy button in the (settings > machine) menu
+ * 
+ * Note: if disabled, EEPROM operations can also be accessed in the (settings > machine > parameters) menu
+ * 
+ * Options:  0: Disabled    1: Enabled
+ */
+#define QUICK_EEPROM_BUTTON 0
 
 /**
  * Manual Leveling
