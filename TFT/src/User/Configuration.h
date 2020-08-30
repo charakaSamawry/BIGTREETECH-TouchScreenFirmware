@@ -23,7 +23,7 @@
  *           3: LED_ORANGE,  4: LED_YELLOW,  5: LED_GREEN,
  *           6: LED_BLUE,    7: LED_INDIGO,  8: LED_VIOLET
  *
- * Default value is: 1 for LED_OFF
+ * Default value is: 1 for LED_OFF ??
 */
 #define STARTUP_KNOB_LED_COLOR 0         // LED_OFF
 #define KEEP_KNOB_LED_COLOR_MARLIN_MODE  // Keeps the LED state in Marlin Mode
@@ -211,14 +211,14 @@
 #define Z_MAX_POS 250
 
 // Specify a pause position as { X, Y, Z_raise }
-#define NOZZLE_PAUSE_RETRACT_LENGTH 15   // (mm)
-#define NOZZLE_RESUME_PURGE_LENGTH  16   // (mm)
+#define NOZZLE_PAUSE_RETRACT_LENGTH 15                // (mm)
+#define NOZZLE_RESUME_PURGE_LENGTH  15.2              // (mm)
 #define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 10)  // (mm) Must be an integer
 #define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 10)  // (mm) Must be an integer
-#define NOZZLE_PAUSE_Z_RAISE        20   // (mm)
-#define NOZZLE_PAUSE_E_FEEDRATE     6000 // (mm/min) retract & purge feedrate
-#define NOZZLE_PAUSE_XY_FEEDRATE    6000 // (mm/min) X and Y axes feedrate
-#define NOZZLE_PAUSE_Z_FEEDRATE     600  // (mm/min) Z axis feedrate
+#define NOZZLE_PAUSE_Z_RAISE        20                // (mm)
+#define NOZZLE_PAUSE_E_FEEDRATE     6000              // (mm/min) retract & purge feedrate
+#define NOZZLE_PAUSE_XY_FEEDRATE    6000              // (mm/min) X and Y axes feedrate
+#define NOZZLE_PAUSE_Z_FEEDRATE     600               // (mm/min) Z axis feedrate
 
 /* M600, M601 ; pause print
  * PrusaSlicer can add M601 on certain height.
