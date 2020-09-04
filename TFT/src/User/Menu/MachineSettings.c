@@ -126,62 +126,6 @@ void menuCustom(void)
   }
 }
 
-void menuRGBSettings(void)
-{
-  MENUITEMS RGBItems = {
-  // title
-  LABEL_RGB_SETTINGS,
-  // icon                       label
-   {{ICON_RGB_RED,              LABEL_RED},
-    {ICON_RGB_GREEN,            LABEL_GREEN},
-    {ICON_RGB_BLUE,             LABEL_BLUE},
-    {ICON_RGB_WHITE,            LABEL_WHITE},
-    {ICON_RGB_OFF,              LABEL_OFF},
-    {ICON_BACKGROUND,           LABEL_BACKGROUND},
-    {ICON_BACKGROUND,           LABEL_BACKGROUND},
-    {ICON_BACK,                 LABEL_BACK},}
-  };
-
-  KEY_VALUES key_num = KEY_IDLE;
-
-  menuDrawPage(&RGBItems);
-
-  while(infoMenu.menu[infoMenu.cur] == menuRGBSettings)
-  {
-    key_num = menuKeyGetValue();
-    switch(key_num)
-    {
-      case KEY_ICON_0:  //Red
-        storeCmd("M150 R255 U0 B0 P255\n");
-        break;
-
-      case KEY_ICON_1:  //Green
-        storeCmd("M150 R0 U255 B0 P255\n");
-        break;
-
-      case KEY_ICON_2:  //Blue
-        storeCmd("M150 R0 U0 B255 P255\n");
-        break;
-
-      case KEY_ICON_3:  //White
-        storeCmd("M150 R255 U255 B255 P255\n");
-        break;
-
-      case KEY_ICON_4:  //Turn Off
-        storeCmd("M150 R0 U0 B0 P0\n");
-        break;
-
-      case KEY_ICON_7:
-        infoMenu.cur--;
-        break;
-
-      default:
-        break;
-    }
-    loopProcess();
-  }
-}
-
 #if QUICK_EEPROM_BUTTON == 1
 void menuEepromSettings(void)
 {
@@ -253,7 +197,6 @@ void menuMachineSettings(void)
     {{ICON_PARAMETER,               LABEL_PARAMETER_SETTING},
      {ICON_GCODE,                   LABEL_TERMINAL},
      {ICON_CUSTOM,                  LABEL_CUSTOM},
-     {ICON_RGB_SETTINGS,            LABEL_RGB_SETTINGS},
      {ICON_TUNING,                  LABEL_TUNING},
 #if QUICK_EEPROM_BUTTON == 1
      {ICON_EEPROM_SAVE,             LABEL_EEPROM_SETTINGS},
@@ -286,10 +229,6 @@ void menuMachineSettings(void)
         break;
 
       case KEY_ICON_3:
-        infoMenu.menu[++infoMenu.cur] = menuRGBSettings;
-        break;
-
-      case KEY_ICON_4:
         infoMenu.menu[++infoMenu.cur] = menuTuning;
         break;
 
