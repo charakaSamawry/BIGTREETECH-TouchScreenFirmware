@@ -7,7 +7,6 @@ extern "C" {
 
 #include "includes.h"
 
-void menuRGBSettings(void);
 void menuMachineSettings(void);
 void menuCustom(void);
 
