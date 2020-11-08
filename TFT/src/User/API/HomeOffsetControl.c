@@ -1,7 +1,7 @@
 #include "HomeOffsetControl.h"
 #include "includes.h"
 
-static float z_offset = HOME_Z_OFFSET_DEFAULT_VALUE;
+static float z_offset = PROBE_OFFSET_DEFAULT_VALUE;
 
 /* Set Z offset value */
 float homeOffsetSetValue(float value)
