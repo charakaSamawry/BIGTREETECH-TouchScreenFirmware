@@ -25,7 +25,7 @@
  *
  * Default value is: 1 for LED_OFF ??
 */
-#define STARTUP_KNOB_LED_COLOR 0         // LED_OFF
+#define STARTUP_KNOB_LED_COLOR 2         // LED_OFF
 #define KEEP_KNOB_LED_COLOR_MARLIN_MODE  // Keeps the LED state in Marlin Mode
 
 /**
@@ -44,10 +44,10 @@
  *              6: LCD_DIM_300_SECONDS,  7: LCD_DIM_CUSTOM_SECONDS
  *
  */
-#define DEFAULT_LCD_BRIGHTNESS      11  // 11: LCD_100_PERCENT - Brightness value from list
-#define DEFAULT_LCD_IDLE_BRIGHTNESS 3   // 3: LCD_10_PERCENT - Brightness value from list
-#define DEFAULT_LCD_IDLE_TIMER      0   // 0: LCD_DIM_OFF
-#define LCD_DIM_CUSTOM_SECONDS      600 // Custom value in seconds. Will be used if LCD_DIM_CUSTOM_SECONDS is set as idle timer.
+#define DEFAULT_LCD_BRIGHTNESS       4 // 11: LCD_100_PERCENT - Brightness value from list
+#define DEFAULT_LCD_IDLE_BRIGHTNESS  2 // 3: LCD_10_PERCENT - Brightness value from list
+#define DEFAULT_LCD_IDLE_TIMER       7 // 0: LCD_DIM_OFF
+#define LCD_DIM_CUSTOM_SECONDS      19 // Custom value in seconds. Will be used if LCD_DIM_CUSTOM_SECONDS is set as idle timer.
 
 //===========================================================================
 //=========================== Marlin Mode Settings ==========================
@@ -63,17 +63,17 @@
  *         12: DARKBLUE,  13: DARKGREEN,  14: GRAY,   15: DARKGRAY
  */
 #define MARLIN_BKCOLOR 1
-#define MARLIN_FNCOLOR 0
+#define MARLIN_FNCOLOR 11
 
 /**
  * Text displayed at the top of the TFT in Marlin Mode.
  */
-#define MARLIN_BANNER_TEXT "LCD12864 Simulator"
+#define MARLIN_BANNER_TEXT "Ender 3 go BrrrR.."
 
 /**
  * show banner text at the top of the TFT in Marlin Mode.
  */
-#define MARLIN_SHOW_BANNER  true //to enabled: true | to disabled: false
+#define MARLIN_SHOW_BANNER  false //to enabled: true | to disabled: false
 /**
  * Run Marlin Mode in Fullscreen
  *
@@ -135,15 +135,15 @@
  * Note: Test audio output with the G-Code:
  * M300 S<frequency Hz> P<duration ms>
  */
-#define BUZZER_FREQUENCY_DURATION_MS 20 // Default 20
-#define BUZZER_FREQUENCY_HZ 10000       // Default 10000, 20Hz to 60KHz
+#define BUZZER_FREQUENCY_DURATION_MS 0 // Default 20
+#define BUZZER_FREQUENCY_HZ 0          // Default 10000, 20Hz to 60KHz
 #define BUZZER_STOP_LEVEL false
 
 /**
  * Toast notification duration (in ms)
  * Set the duration for displaying toast notification on top of the screen
  */
-#define TOAST_DURATION 3000
+#define TOAST_DURATION 4500
 
 /**
  * Notification style for ACK messages
@@ -168,17 +168,17 @@
  */
 #define TITLE_BACKGROUND_COLOR     1  // Title background color // 0xD928
 #define BACKGROUND_COLOR           1  // Background color // 0x0A29
-#define FONT_COLOR                 0  // Font foreground color
-#define REMINDER_FONT_COLOR        2  // Reminder font color, such as: "No print attached", "Busy processing", etc.
-#define VOLUME_REMINDER_FONT_COLOR 5  // Volume reminder font color, such as: "Card inserted", "Card removed"
+#define FONT_COLOR                 0xEBE0D8  // Font foreground color
+#define REMINDER_FONT_COLOR        0xFF8E3D  // Reminder font color, such as: "No print attached", "Busy processing", etc.
+#define VOLUME_REMINDER_FONT_COLOR 0xFFB83D  // Volume reminder font color, such as: "Card inserted", "Card removed"
 #define STATUS_XYZ_BG_COLOR        15 // Background color for X Y Z position display in Status Screen.
 #define LISTVIEW_BORDER_COLOR      15 // Border color in List view
 #define LISTVIEW_ICON_COLOR        15 // icon color in List view
 
 #define HOTEND_NUM   1    // set in 1~6
 #define EXTRUDER_NUM 1    // set in 1~6
-#define FAN_NUM      1    // set in 1~6
-#define FAN_CTRL_NUM 0    // set in 1~2
+#define FAN_NUM      1    // set in 1~6 (total fans? controller and cooling?)
+#define FAN_CTRL_NUM 0    // set in 1~2 (cooling + controller fan = 2?)
 #define MIXING_EXTRUDER 0 // set default 0, for mixing_extruder 1 (this option turns off autodetection of the number of extruders)
 
 #define PREHEAT_LABELS   {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}
@@ -213,14 +213,14 @@
 #define AXIS_DISPLAY_ID  {"X",  "Y",  "Z",   "E",  "E2"}
 
 // Default move speed mm/min
-#define DEFAULT_SPEED_MOVE   3000
-#define SPEED_MOVE_SLOW      1000
-#define SPEED_MOVE_FAST      5000
+#define DEFAULT_SPEED_MOVE   500
+#define SPEED_MOVE_SLOW      3000
+#define SPEED_MOVE_FAST      6000
 
 // Extrude speed mm/min
 #define EXTRUDE_SLOW_SPEED   60
-#define EXTRUDE_NORMAL_SPEED 600
-#define EXTRUDE_FAST_SPEED   1200
+#define EXTRUDE_NORMAL_SPEED 300
+#define EXTRUDE_FAST_SPEED   600
 
 // Size of machine
 #define X_MIN_POS 0
@@ -231,14 +231,14 @@
 #define Z_MAX_POS 250
 
 // Specify a pause position as { X, Y, Z_raise }
-#define NOZZLE_PAUSE_RETRACT_LENGTH 15                // (mm)
-#define NOZZLE_RESUME_PURGE_LENGTH  15.2              // (mm)
-#define NOZZLE_PAUSE_X_POSITION     (X_MIN_POS + 10)  // (mm) Must be an integer
-#define NOZZLE_PAUSE_Y_POSITION     (Y_MIN_POS + 10)  // (mm) Must be an integer
-#define NOZZLE_PAUSE_Z_RAISE        20                // (mm)
-#define NOZZLE_PAUSE_E_FEEDRATE     6000              // (mm/min) retract & purge feedrate
+#define NOZZLE_PAUSE_RETRACT_LENGTH  6                // (mm)
+#define NOZZLE_RESUME_PURGE_LENGTH   6              // (mm)
+#define NOZZLE_PAUSE_X_POSITION     X_MIN_POS         // (mm) Must be an integer
+#define NOZZLE_PAUSE_Y_POSITION     Y_MAX_POS         // (mm) Must be an integer
+#define NOZZLE_PAUSE_Z_RAISE        50                // (mm)
+#define NOZZLE_PAUSE_E_FEEDRATE     2100              // (mm/min) retract & purge feedrate
 #define NOZZLE_PAUSE_XY_FEEDRATE    6000              // (mm/min) X and Y axes feedrate
-#define NOZZLE_PAUSE_Z_FEEDRATE     600               // (mm/min) Z axis feedrate
+#define NOZZLE_PAUSE_Z_FEEDRATE     1200              // (mm/min) Z axis feedrate
 
 /* M600, M601 ; pause print
  * PrusaSlicer can add M601 on certain height.
@@ -292,48 +292,41 @@
  * Manual Leveling
  * Move to four corner points to Leveling manually (Point 1, Point 2, Point 3, Point 4)
  */
-#define LEVELING_EDGE_DISTANCE     20    // Inset distance from bed's edge for calculating leveling point location.
-#define LEVELING_POINT_Z           0.2f  // Z-axis position when nozzle stays for leveling
-#define LEVELING_POINT_MOVE_Z      10.0f // Z-axis position when nozzle move to next point
+#define LEVELING_EDGE_DISTANCE     35    // Inset distance from bed's edge for calculating leveling point location.
+#define LEVELING_POINT_Z           0.4f  // Z-axis position when nozzle stays for leveling (1.0f=1mm?????)
+#define LEVELING_POINT_MOVE_Z      5.0f  // Z-axis position when nozzle move to next point  ^^^^^^^^^^^^^
 #define LEVELING_POINT_XY_FEEDRATE 6000  // (mm/min) X and Y axes move feedrate
 #define LEVELING_POINT_Z_FEEDRATE  600   // (mm/min) Z axis move feedrate
 
 #define LEVELING_EDGE_DISTANCE_DISPLAY_ID   "X/Y"
-#define LEVELING_EDGE_DISTANCE_MIN          0
-#define LEVELING_EDGE_DISTANCE_MAX          100
+#define LEVELING_EDGE_DISTANCE_MIN          0     //(What is this?)
+#define LEVELING_EDGE_DISTANCE_MAX          100   //
 #define LEVELING_EDGE_DISTANCE_DEFAULT      LEVELING_EDGE_DISTANCE
 
 /**
  * Popup
  */
-#define POPUP_NOTIFICATION_DURATION 3000;                  // expressed in ms. E.g. 1500 corresponds to 1.5 seconds
+#define POPUP_NOTIFICATION_DURATION 6000;                  // expressed in ms. E.g. 1500 corresponds to 1.5 seconds
 
 /**
- * Z Fade
+ * Z Fade //(needs more explanation 0.0f? whats f? Z_FADE referring to leveling?)
  */
 #define Z_FADE_MIN_VALUE     0.0f
-#define Z_FADE_MAX_VALUE     20.0f
-#define Z_FADE_DEFAULT_VALUE 10.0f
+#define Z_FADE_MAX_VALUE     100.0f
+#define Z_FADE_DEFAULT_VALUE 7.0f
 
 /**
- * Probe Offset
+ * Probe Offset //(In marlin probe offset is from nozzle (000) in XYZ. Would this not be better called "Probe Range"?)
  */
 #define PROBE_OFFSET_MIN_VALUE     -20.0f
 #define PROBE_OFFSET_MAX_VALUE     20.0f
-#define PROBE_OFFSET_DEFAULT_VALUE 0.0f
-
-/**
- * Home Offset
- */
-#define HOME_Z_OFFSET_MIN_VALUE     -20.0f
-#define HOME_Z_OFFSET_MAX_VALUE     20.0f
-#define HOME_Z_OFFSET_DEFAULT_VALUE 0.0f
+#define PROBE_OFFSET_DEFAULT_VALUE 0.0f  //(So is this where probe rests as default? so Z will be below 0 when over high spots?)
 
 /**
  * Babystep
  */
-#define BABYSTEP_MIN_VALUE     -5.0f
-#define BABYSTEP_MAX_VALUE     5.0f
+#define BABYSTEP_MIN_VALUE     -2.0f
+#define BABYSTEP_MAX_VALUE     2.0f
 #define BABYSTEP_DEFAULT_VALUE 0.0f
 #define BABYSTEP_MAX_UNIT      1.0f
 
@@ -345,8 +338,8 @@
 //
 // NOTE: It must be in range 1 - 15
 //
-#define MESH_GRID_MAX_POINTS_X 10
-#define MESH_GRID_MAX_POINTS_Y 10
+#define MESH_GRID_MAX_POINTS_X 15
+#define MESH_GRID_MAX_POINTS_Y 15
 
 // Set the color used for drawing the mesh with the minimun and maximum value in the grid
 //
@@ -487,12 +480,12 @@
  * Enable Start & End G-code in SETTINGS -> FEATURE menu.
  */
 // Start G-code - run this G-code before starting print
-#define PRINT_START_GCODE "G28 XY R10\n" // Raise Z 10mm before homing X & Y
+#define PRINT_START_GCODE "G28" // Raise Z 10mm before homing X & Y ??? why? if position is known G28 already does a z lift before homing xy surely?
 
 // End G-code - run this G-code after finishing print
-#define PRINT_END_GCODE "G90\nG1 E-4\nG92 E0\nM18\n" // Switch to absolute positioning, reduce filament pressure by performing small retract, reset extruder position, disable steppers
+#define PRINT_END_GCODE "G10\nG27 P2\nM18" // Switch to absolute positioning, reduce filament pressure by performing small retract, reset extruder position, disable steppers
 
 // Cancel G-code - run this G-code after canceling print
-#define PRINT_CANCEL_GCODE "G28 XY R10\n" // Home XY and raise Z 10mm
+#define PRINT_CANCEL_GCODE "G10\nG27 P2\n" // Home XY and raise Z 10mm
 
 #endif
