@@ -209,18 +209,11 @@ void menuMachineSettings(void)
      {ICON_TUNING,                  LABEL_TUNING},
 #if QUICK_EEPROM_BUTTON == 1
      {ICON_EEPROM_SAVE,             LABEL_EEPROM_SETTINGS},
-#else
-     {ICON_BACKGROUND,              LABEL_BACKGROUND},
 #endif
+     {ICON_BACKGROUND,              LABEL_BACKGROUND},
      {ICON_BACKGROUND,              LABEL_BACKGROUND},
      {ICON_BACK,                    LABEL_BACK}}
   };
-
-  const ITEM itemCaseLight = {ICON_CASE_LIGHT, LABEL_CASE_LIGHT};
-  if (infoMachineSettings.caseLightsBrightness == ENABLED)
-  {
-    machineSettingsItems.items[KEY_ICON_6] = itemCaseLight;
-  }
 
   KEY_VALUES key_num = KEY_IDLE;
 
@@ -248,16 +241,10 @@ void menuMachineSettings(void)
         break;
 
 #if QUICK_EEPROM_BUTTON == 1
-      case KEY_ICON_5:
+      case KEY_ICON_4:
         infoMenu.menu[++infoMenu.cur] = menuEepromSettings;
         break;
 #endif
-      case KEY_ICON_6:
-        if (infoMachineSettings.caseLightsBrightness == ENABLED){
-          infoMenu.menu[++infoMenu.cur] = menuCaseLight;
-        }
-        break;
-
       case KEY_ICON_7:
         infoMenu.cur--;
         break;
