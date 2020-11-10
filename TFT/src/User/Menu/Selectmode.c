@@ -31,7 +31,7 @@ void drawModeIcon(void)
   GUI_RestoreColorDefault();
 
   if(infoSettings.marlin_type == LCD12864)
-    GUI_DispStringInPrect(&mode_title_rect[0],(uint8_t *)"LCD12864 Mode");
+    GUI_DispStringInPrect(&mode_title_rect[0],(uint8_t *)"Marlin Mode");
   else
     GUI_DispStringInPrect(&mode_title_rect[0],(uint8_t *)"LCD2004 Mode");
 
