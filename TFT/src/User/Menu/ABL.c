@@ -205,8 +205,8 @@ void menuABL(void)
             break;
 
           case BL_UBL:                                     // if Unified Bed Leveling
-            storeCmd("G29 P1\n");
-            storeCmd("G29 P3\n");
+            storeCmd("G29 P2\n");
+            //storeCmd("G29 P3\n");
             storeCmd("M118 A1 UBL Complete\n");
             break;
 
